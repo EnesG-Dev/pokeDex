@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "openSans";
+  src: url("./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf")
+      format("woff"),
+    /* für moderne Browser */
+      url("./fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf")
+      format("truetype"),
+    /* für ältere Browser */
+      url("./fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth\,wght.ttf")
+      format("truetype");
+}
