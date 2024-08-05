@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>PokéDex</title>
 
     <!-- Bootstrap einbindung -->
     <link
@@ -13,6 +13,11 @@
       crossorigin="anonymous"
     />
 
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/img/favicon/favicon-96x96.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/img/favicon/favicon-16x16.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/img/favicon/apple-touch-icon-180x180.png">
+
     <link rel="stylesheet" href="./styles/fonts.css" />
     <link rel="stylesheet" href="./styles/standard.css" />
     <link rel="stylesheet" href="./styles/assets.css" />
@@ -21,8 +26,32 @@
     <script src="./scripts/templates.js"></script>
     <script src="script.js"></script>
   </head>
-  <body>
 
+  <body onload="init()">
+
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <img class="logo-img" src="./assets/img/logo/logo.png">
+            PokéDex</a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="#ID / Name" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row" id="previewContain">
+            <!-- Beispiel für ein Pokémon -->
+            
+        </div>
+    </div>
     
+
+
+
+            
   </body>
 </html>
