@@ -7,80 +7,97 @@
 }
 
 body {
-    min-height: 100vh;
-    background-image: url(./assets/img/bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: bottom;
+  min-height: 100vh;
+  background-image: url(./assets/img/bg2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
 }
 
 .logo-img {
-    height: 40px;
+  height: 40px;
 }
 
-
-
+.preview-contain {
+    padding-top: 42px;
+}
 
 .pokemon-container {
-    padding: 4px; /* Abstand zum Rand */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative; /* Damit die inneren Elemente positioniert werden können */
+  padding: 4px; /* Abstand zum Rand */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Damit die inneren Elemente positioniert werden können */
 
-    background-color: cadetblue;
+  background-color: cadetblue;
 }
 .pokemon-container img {
-    max-width: 80%;
-    max-height: 80%;
-    margin: 2px;
-    z-index: 1;
+  max-width: 80%;
+  max-height: 80%;
+  margin: 2px;
+  z-index: 1;
 }
 .square {
-    position: relative;
-    width: 100%;
-    padding-top: 100%; /* Höhe auf 100% der Breite setzen, um ein Quadrat zu erzeugen */
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* Höhe auf 100% der Breite setzen, um ein Quadrat zu erzeugen */
 }
 .square-content {
-    position: absolute;
-    top: 4px; /* Abstand zum Rand */
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  top: 4px; /* Abstand zum Rand */
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .pokemon-id {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-size: 12px;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
 }
 .pokemon-type {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 20%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 20%;
 }
 .pokemon-name {
-    position: absolute;
-    bottom: 4px;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(255, 255, 255, 0.8);
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-size: 12px;
-    z-index: 2;
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-size: 12px;
+  z-index: 2;
 }
 .pokemon-name::first-letter {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
+
+.poke-box-shadow:hover {
+    box-shadow: 1px 1px 20px whitesmoke;
+}
+.poke-box-shadow:hover .poke-filter {
+    filter: drop-shadow(2px 5px 7px black);
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+  }
+  
+  .poke-box-shadow:hover .zoom {
+    transform: scale(1.1); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+  }
 
 
 
