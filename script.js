@@ -4,7 +4,7 @@ const POKE_SPECIES = 'https://pokeapi.co/api/v2/pokemon-species/' // ID/
 const POKE_IMG = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/' // 150.svg
 
 let idCounter = 1;
-let toId = 21;
+let toId = 41;
 let test
 
 async function renderPreviews() {
@@ -18,6 +18,10 @@ async function renderPreviews() {
         setBackgroundColor(pokemon);
     }
     toId = toId+20;
+}
+
+function showPokeCard(id) {
+    console.log(id);
 }
 
 // async function pokeSpecies(id) {
