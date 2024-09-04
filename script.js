@@ -5,8 +5,10 @@ const POKE_IMG = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprit
 
 let idCounter = 1;
 let toId = 41;
+let isSearching = false;
 
 async function loadMore() {
+    if (isSearching) return;
     document.getElementById('loadMore_img').classList.add('pokeball-loading');
     document.getElementById("loadMore_btn").disabled = true;
     await renderPreviews(0);
@@ -16,8 +18,11 @@ async function loadMore() {
 }
 
 async function renderPreviews(count) {
+    if (isSearching) return;
     if (count == 1) { idCounter = 1 }
     for (idCounter; idCounter < toId; idCounter++) {
+        if (isSearching) break;
+       
         let pokeUrl = POKEAPI + idCounter + '/';
         let pokemon = await fetchDataJson(pokeUrl);
         document.getElementById('previewContain').innerHTML += getPreviewTemp(pokemon);
@@ -185,6 +190,9 @@ async function fetchDataJson(api) {
 
 async function searchPokemon() {
     let searchWord = document.getElementById('searchInp').value;
+    if (searchWord.length > 0) {
+        isSearching = true;
+    }
     if (searchWord.length > 2) {
         let allPokemmonLink = await fetchDataJson(ALLPOKEMON);
 
@@ -192,8 +200,9 @@ async function searchPokemon() {
             .filter(pokemon => pokemon['name'].includes(searchWord))
             .map(pokemon => pokemon.name);
 
-        renderSearchPokemons(searchPokemons);
+        await renderSearchPokemons(searchPokemons);
     } else if (searchWord.length == 0) {
+        isSearching = false;
         document.getElementById('previewContain').innerHTML = '';
         await renderPreviews(1);
         document.getElementById('loadMore_btn').classList.remove('d-none');
